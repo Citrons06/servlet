@@ -14,14 +14,14 @@ public class MemberRepository {
 	private static long sequence = 0L;
 
 	private static final MemberRepository instance = new MemberRepository();	// 싱글톤
-	
+
 	public static MemberRepository getInstance() {
 		return instance;
 	}
-	
 	private MemberRepository() {
 	}
-	
+
+
 	public Member save(Member member) {
 		member.setId(++sequence);
 		store.put(member.getId(), member);
